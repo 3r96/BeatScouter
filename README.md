@@ -1,0 +1,3 @@
+# BeatScout
+
+BeatScout is a web application that facilitates the search for concerts based on the user's current location. The app offers a variety of customizable settings, including Range and ZipCode, which allow the user to refine their search results according to their preferences. In addition, the platform enables the user to purchase tickets for the selected event and access their personalized Spotify "This Is" playlist directly within the app. By integrating these features, BeatScout provides a seamless and convenient experience for music enthusiasts seeking live events in their vicinity.
