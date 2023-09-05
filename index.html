@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>BeatScout | Find your next gig!</title>
+    <script src="/api.js"></script>
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="img/BeatScout-logos_black.png"
+          alt="BeatScout logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Open account</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="header__title">
+        <h1>
+          Find the latest <span class="highlight"> concerts</span> in your area!
+        </h1>
+        <div class="current_location"></div>
+        <!-- <h2 class="header__location">
+            Your location: 📌 <span class="highlight">{city}</span>
+          </h2> -->
+        </header>
+      </div>
+      <section class="results">
+        <div class="performance_row">
+          <div class="performance_column">
+            <!-- <img class="performer_image" src="img/performer.png" /> -->
+            <div class="performance_info_row"></div>
+          </div>
+          <div class="performance_column">
+            <div class="performance_info_row"></div>
+          </div>
+          <div class="performance_column">
+            <div class="performance_info_row"></div>
+          </div>
+        </div>
+        <div class="performance_row">
+          <div class="performance_column">
+            <!-- <img class="performer_image" src="img/performer.png" /> -->
+            <div class="performance_info_row"></div>
+          </div>
+          <div class="performance_column">
+            <div class="performance_info_row"></div>
+          </div>
+          <div class="performance_column">
+            <div class="performance_info_row"></div>
+          </div>
+        </div>
+      </section>
+
+    <section class="section section--sign-up">
+      <div class="section__title">
+        <h3 class="section__header">The best app to find your next concert!</h3>
+      </div>
+      <button class="btn btn--show-modal">Sign Up today!</button>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <img
+        src="img/BeatScout-logos_white.png"
+        alt="Logo"
+        class="footer__logo"
+      />
+    </footer>
+  </body>
+</html>
