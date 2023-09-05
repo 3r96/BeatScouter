@@ -217,7 +217,6 @@ p {
   margin: 1rem;
   position: relative;
   box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
 }
 
 .performance_info_row {
@@ -226,11 +225,9 @@ p {
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-radius: 30px;
 }
 .performer_img {
   width: 350px;
-  border-radius: 30px;
 }
 .performance_title {
   font-size: 25px;
