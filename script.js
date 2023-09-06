@@ -129,7 +129,7 @@ prev_button.addEventListener("click", function () {
   displayData(--currentPage);
 });
 
-/////////////////////////////////////////////////// Using
+///////////////////////////////////////////////////
 // getEvents().then((data) => {
 //   // checking if there is data coming from getEvents()
 //   if (data && data.events) {
