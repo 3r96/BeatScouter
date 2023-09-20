@@ -197,7 +197,31 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
+}
+.filter {
+  background-color: #c5d7f4;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filtering_section {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.search_by_zip_code {
+  font-size: 2rem;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 130px;
+  height: 35px;
+  border: none;
+  border-radius: 1rem;
+  background-color: #d9d9d9;
 }
 
 /*COLUMNS*/
@@ -256,15 +280,13 @@ p {
 }
 
 .scroller_button {
-  background-color: var(--color-primary);
-  width: 8rem;
-  height: 4rem;
+  font-size: 40px;
+  border: none;
+  background: transparent;
   border-radius: 1rem;
-  margin-inline-end: 1rem;
-  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
 }
 .scroller_button:hover {
-  background-color: var(--color-primary-darker);
+  box-shadow: 0 2rem 5rem 2rem rgba(18, 43, 118, 0.1);
 }
 /* FOOTER */
 .footer {
