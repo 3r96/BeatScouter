@@ -11,10 +11,15 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>BeatScout | Find your next gig!</title>
-    <script src="/api.js"></script>
     <script type="module" src="src/js/controller.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUpYp1nicjiAFMHgySZ4N6OKgoTKKMuZM&callback=initMap" async defer></script>
+
+
+
+
   </head>
   <body>
+    
     <header class="header">
       <nav class="nav">
         <img
@@ -38,10 +43,33 @@
         <div class="current_location">
         </header>
       </div>
-        <div class="filtering_section">
-          <h4 >Want to search in a different city? </h4>
+      <section class="filtering_section">
+        <h4>Want to search in a different city? </h4>
+        <div class="zipcode_column">
+          <button class="home_button">🏠</button>
           <input type="text" class="search_by_zip_code" placeholder="Zip code" required minlength="5" maxlength="5">
-        </div> 
+          
+        </div>
+        <div class="slider-column">
+          <input class="slider" type="range" id="valueSlider" min="50" max="200" step="50" value="50">
+          <!-- Wrap the values in a div container -->
+          <div class="slider-values">
+            <span class="slider-value">50 mi</span>
+            <span class="slider-value">100 mi</span>
+            <span class="slider-value">150 mi</span>
+            <span class="slider-value">200 mi</span>
+          </div>
+        </div>
+      
+        <div class="found_concerts">
+          <!-- <h1 class="found-concerts">✅Concerts found near: Miami Lakes!</h1> -->
+        </div>
+      </section>
+      
+      
+      </div>
+      <div class="spinner-container">
+        <div class="spinner"></div>
       </div>
       <section class="results">
         <!-- <input type="text" class="search_by_zip_code" placeholder="Enter a different Zip Code" /> -->
@@ -49,17 +77,37 @@
           <div class="performance_column">
             <!-- <img class="performer_image" src="img/performer.png" /> -->
             <div class="performance_img">image</div>
+            <div class="performance_info">information</div>  
+            <button class="like_button">🤘</button>
+            <button class="venue_link">🎫</button> 
+            <div class="spotify_button">
+              <button class="play_button">Play on Spotify</button>
+            </div> 
+         
+            
+          </div>
+         
+          <div class="performance_column">
+            <!-- <img class="performer_image" src="img/performer.png" /> -->
+            <div class="performance_img">image</div>
             <div class="performance_info">information</div>
+            <button class="like_button">🤘</button>
+            <button class="venue_link">🎫</button>
+            <div class="spotify_button">
+              
+              <button class="play_button">Play on Spotify</button>
+              
+            </div>
           </div>
           <div class="performance_column">
             <!-- <img class="performer_image" src="img/performer.png" /> -->
             <div class="performance_img">image</div>
             <div class="performance_info">information</div>
-          </div>
-          <div class="performance_column">
-            <!-- <img class="performer_image" src="img/performer.png" /> -->
-            <div class="performance_img">image</div>
-            <div class="performance_info">information</div>
+            <button class="like_button">🤘</button>
+            <button class="venue_link">🎫</button>
+            <div class="spotify_button">
+              <button class="play_button">Play on Spotify</button>
+            </div>
           </div>  
         </div>
         <div class="performance_row">
@@ -67,16 +115,33 @@
             <!-- <img class="performer_image" src="img/performer.png" /> -->
             <div class="performance_img">image</div>
             <div class="performance_info">information</div>
+            <button class="like_button">🤘</button>
+            <button class="venue_link">🎫</button>
+            <div class="spotify_button">
+    
+              <button class="play_button">Play on Spotify</button>
+
+            </div>
           </div>
           <div class="performance_column">
             <!-- <img class="performer_image" src="img/performer.png" /> -->
             <div class="performance_img">image</div>
             <div class="performance_info">information</div>
+            <button class="like_button">🤘</button>
+            <button class="venue_link">🎫</button>
+            <div class="spotify_button">
+              <button class="play_button">Play on Spotify</button>
+            </div>
           </div>
           <div class="performance_column">
             <!-- <img class="performer_image" src="img/performer.png" /> -->
             <div class="performance_img">image</div>
             <div class="performance_info">information</div>
+            <button class="like_button">🤘</button>
+            <button class="venue_link">🎫</button>
+            <div class="spotify_button">
+              <button class="play_button">Play on Spotify</button>
+            </div>
           </div>  
         </div>
 
@@ -86,6 +151,20 @@
           <button class="scroller_button next_button">⏭️</button>
         </div>
       </section>
+      <dic class="event_stats">
+        <h1>📊 Events Stats</h1>
+      </dic>
+      
+      <section class="price_table_section">
+        
+      </section>
+      <h1 class="map_stats">📍 Venue Locations</h1>
+      <div class="map_container" >
+        <div id="map"></div>
+      </div>
+      <section class="spotify_playlist" id="spotify_playlist_view">
+      </section>
+
 
 
     <section class="section section--sign-up">
