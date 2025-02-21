@@ -26,6 +26,7 @@ class ConcertsView {
   // this render method accepts the data coming from the controller to render it
   renderEvents(data) {
     const events = data.events;
+    console.log(data);
 
     // clearing the current content
     this.#performanceNodeList.forEach((el) => {
@@ -42,7 +43,16 @@ class ConcertsView {
 
     // iterating performance Image Node list to display pics
     this.#performanceImageList.forEach(function (el, index) {
-      const img = events[index].performers[0].image;
+      let img;
+      if (events[index].performers[0].image == null) {
+        img =
+          "https://img.freepik.com/free-vector/open-air-concert_23-2148653265.jpg";
+      } else {
+        img = events[index].performers[0].image;
+      }
+
+      // console.log(img);
+
       el.insertAdjacentHTML(
         "afterbegin",
         `<img src=${img} class=performer_img>`
@@ -51,7 +61,7 @@ class ConcertsView {
     //console.log(this.#performanceNodeList);
     // iterating performance info node list to display info for the concert
     this.#performanceNodeList.forEach(function (el, index) {
-      const title = events[index].performers[0].name;
+      const title = events[index].performers[0].name.slice(0, 30);
       const venue = events[index].venue.name;
       const datetime = new Date(events[index].datetime_utc);
       const options = {
@@ -92,17 +102,40 @@ class ConcertsView {
   }
   renderEmbeddedPlaylist(data) {
     this.#spotifyPlaylist.innerHTML = "";
-    if (data) {
-      console.log(data);
-      this.#spotifyPlaylist.insertAdjacentHTML(
-        "afterbegin",
-        `
-      <iframe src="https://open.spotify.com/embed/playlist/${data.playlists.items[0].id}?utm_source=generator" width="900" height="700" border="none" allow="geolocation" frameborder="0" allow="encrypted-media" ></iframe>
-
-    `
-      );
-      return console.log(data.playlists.items[0].id);
+    console.log(data);
+    if (
+      !data ||
+      !data.playlists ||
+      !data.playlists.items ||
+      data.playlists.items.length === 0
+    ) {
+      console.error("No playlists found.");
+      return;
     }
+
+    // Filter out null values and get the first valid playlist
+    const validPlaylists = data.playlists.items.filter((item) => item !== null);
+
+    if (validPlaylists.length === 0) {
+      console.error("No valid playlists found.");
+      return;
+    }
+
+    const playlistId = validPlaylists[0].id; // Get the first valid playlist ID
+    console.log("Embedding playlist:", playlistId);
+
+    this.#spotifyPlaylist.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <iframe 
+        src="https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator" 
+        width="900" height="700" 
+        style="border:none;" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        frameborder="0">
+      </iframe>
+      `
+    );
   }
   formatDate(date) {
     const datetime = new Date(date);
