@@ -21,7 +21,9 @@ export const getEvents = async function (page = 1) {
 
     const res = await fetch(url);
     const data = await res.json();
-    //console.log(data);
+    console.log(data);
+    const jsonString = JSON.stringify(data);
+    // console.log(jsonString);
     return data;
   } catch (err) {
     alert(err);
